@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Types
   class VoteType < Types::BaseObject
     field :id, ID, null: false
@@ -9,7 +7,7 @@ module Types
 
     # User
     field :user, Types::UserType, null: true
-    
+
     # Poll
     field :poll, Types::PollType, null: true
 

@@ -6,7 +6,7 @@ module Types
 
     # POLLS
     field :polls, [Types::PollType], null: false do
-      description "Get all polls"
+      description 'Get all polls'
     end
 
     def polls
@@ -14,7 +14,7 @@ module Types
     end
 
     field :poll, Types::PollType, null: false do
-      description "Get a poll by id"
+      description 'Get a poll by id'
       argument :id, ID, required: true
     end
 
@@ -24,7 +24,7 @@ module Types
 
     # USERS
     field :users, [Types::UserType], null: false do
-      description "Get all users"
+      description 'Get all users'
     end
 
     def users
@@ -32,7 +32,7 @@ module Types
     end
 
     field :user, Types::UserType, null: false do
-      description "Get a user by id"
+      description 'Get a user by id'
       argument :id, ID, required: true
     end
 
@@ -42,7 +42,7 @@ module Types
 
     # CHOICES
     field :choices, [Types::ChoiceType], null: false do
-      description "Get all choices"
+      description 'Get all choices'
     end
 
     def choices
@@ -50,7 +50,7 @@ module Types
     end
 
     field :choice, Types::ChoiceType, null: false do
-      description "Get a choice by id"
+      description 'Get a choice by id'
       argument :id, ID, required: true
     end
 
@@ -60,20 +60,20 @@ module Types
 
     # VOTES
     field :votes, [Types::VoteType], null: false do
-      description "Get all votes"
+      description 'Get all votes'
     end
-    
+
     def votes
       Vote.all
     end
 
     field :vote, Types::VoteType, null: false do
-      description "Get a vote by id"
+      description 'Get a vote by id'
       argument :id, ID, required: true
     end
 
     def vote(id:)
-      Vote
+      Vote.find(id)
     end
   end
 end
